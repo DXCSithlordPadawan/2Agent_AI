@@ -3,7 +3,7 @@
   <overview>
     Deploy and operate Argo CD (pinned v3.2.1) on a k3s cluster running inside Debian 13 (Trixie) LXC containers on Proxmox VE 9.1.
     Includes air-gap packaging, local registry rewriting, internal PKI trust injection, and security mapping to CIS Kubernetes Benchmark Level 2,
-    DISA STIG (Kubernetes), and FIPS 140-3 guidance. Artifacts include implementation guides, helper scripts, Mermaid diagrams, and version-pinned manifests.
+    DISA STIG (Kubernetes), and FIPS 140-3 guidance. Artifacts include implementation guides, maintenance guides, helper scripts, RACI Matrix, RBAC Matrix, Mermaid diagrams, and version-pinned manifests.
   </overview>
 
   <technology_stack>
@@ -25,7 +25,7 @@
 
   <prerequisites>
     <environment_setup>
-      - Internal DNS domain IP: 192.168.0.80 and CA PEM IP:192.168.0.92
+      - Internal DNS domain IP: 192.168.0.80 and CA PEM IP: 192.168.0.92 and GITEA IP: 192.168.0.83
       - Domain Name: aip.dxc.com
       - Local registry endpoint and credentials
       - Proxmox access with ability to run helper scripts
@@ -41,8 +41,9 @@
       - Optional Kustomize overlays for PSA enforcement and audit policy
     </deployment>
     <documentation>
-      - PRD, architecture views with Mermaid, security mapping, TOGAF viewpoints
+      - PRD, architecture views with Mermaid, security mapping, TOGAF viewpoints, RACI Matrix, RBAC Matrix
       - Implementation guide for staging and execution
+      - Maintenance guide for support, updates and patching
       - Test plan and engineering scripts for LXC/K8s/Argo CD readiness
     </documentation>
     <helper_scripts>
@@ -95,7 +96,7 @@
       - Clean, maintainable helper scripts
     </technical_quality>
     <documentation>
-      - Complete PRD, architecture diagrams, security mapping, test plans, and runbooks
+      - Complete PRD, architecture diagrams, security mapping, RBAC and RACI matrix, maintenance guide, test plans, and runbooks
     </documentation>
   </success_criteria>
 </project_specification>
