@@ -1,0 +1,7 @@
+@startuml
+node UI
+node API
+database DB
+UI --> API
+API --> DB
+@enduml

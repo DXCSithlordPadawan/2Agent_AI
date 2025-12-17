@@ -1,0 +1,9 @@
+
+# CI/CD pipeline skeleton
+stages:
+  - lint
+  - build
+  - test
+  - security_scan
+  - deploy
+  - rollback

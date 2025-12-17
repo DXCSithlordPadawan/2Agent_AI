@@ -1,0 +1,12 @@
+
+openapi: 3.0.0
+info:
+  title: Analytics API
+  version: 0.1.0
+paths:
+  /datasets:
+    get:
+      summary: List datasets
+      responses:
+        '200':
+          description: OK

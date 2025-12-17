@@ -1,0 +1,8 @@
+@startuml
+entity "datasets" as D {
+  * id : int
+  * name : text
+  * owner : text
+  * created_at : timestamp
+}
+@enduml

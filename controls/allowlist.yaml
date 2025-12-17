@@ -1,0 +1,17 @@
+
+# controls/allowlist.yaml
+bash:
+  allowed:
+    - "git init"
+    - "git add -A"
+    - "git commit -m *"
+    - "mkdir -p *"
+    - "cp * *"
+    - "sed -i *"
+    - "ls -la"
+  denied:
+    - "rm -rf /"
+    - "curl http*"
+    - "wget http*"
+filescope:
+  write_root: ["docs","arch","security","togaf","impl","deploy","db","controls","planning","requirements","handoff"]

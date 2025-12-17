@@ -1,0 +1,18 @@
+
+phases:
+  - id: discovery
+    goals: ["clarify scope","collect constraints"]
+    artifacts: ["docs/architecture_overview.md","togaf/motivation.md"]
+    exit_criteria: ["stakeholder sign-off","risk register baseline"]
+  - id: design
+    goals: ["produce TOGAF views","define API and data"]
+    artifacts: ["togaf/*","impl/api_contracts.yaml","db/schema.sql","arch/diagrams/*"]
+    exit_criteria: ["design review passed"]
+  - id: build
+    goals: ["implement MVP features"]
+    artifacts: ["impl/design_decisions.md","deploy/pipeline.yaml","security/security_constraints.md"]
+    exit_criteria: ["tests green","security checks passed"]
+  - id: launch
+    goals: ["deploy","runbooks"]
+    artifacts: ["deploy/runbooks.md"]
+    exit_criteria: ["production checklist complete"]

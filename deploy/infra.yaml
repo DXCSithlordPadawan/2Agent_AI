@@ -1,0 +1,6 @@
+
+# Infra outline (Terraform/Bicep placeholder)
+modules:
+  network: {}
+  database: {}
+  compute: {}

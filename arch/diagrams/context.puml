@@ -1,0 +1,8 @@
+@startuml
+actor User
+rectangle System {
+  User --> (UI)
+  (UI) --> (API)
+  (API) --> (DB)
+}
+@enduml

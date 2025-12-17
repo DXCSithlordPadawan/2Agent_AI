@@ -1,0 +1,52 @@
+[
+  {
+    "id": "FTR-001",
+    "title": "Architecture overview document",
+    "priority": "Must",
+    "acceptance_criteria": [
+      "Covers context, containers, components, data flows",
+      "Includes decisions table",
+      "Links to diagrams in arch/diagrams"
+    ]
+  },
+  {
+    "id": "SEC-001",
+    "title": "Security constraints",
+    "priority": "Must",
+    "acceptance_criteria": [
+      "Defines authN/authZ model",
+      "Specifies encryption, logging, auditing",
+      "Threat model documented"
+    ]
+  },
+  {
+    "id": "APP-010",
+    "title": "TOGAF application view",
+    "priority": "Should",
+    "acceptance_criteria": [
+      "Applications & interfaces listed",
+      "Traceability matrix present",
+      "Consistent with PRD Features"
+    ]
+  },
+  {
+    "id": "DEP-001",
+    "title": "CI/CD pipeline skeleton",
+    "priority": "Must",
+    "acceptance_criteria": [
+      "Stages: lint, build, test, security scan, deploy, rollback",
+      "Config in deploy/pipeline.yaml",
+      "Dry-run instructions in runbooks"
+    ]
+  },
+  {
+    "id": "DB-001",
+    "title": "Database schema & initial migration",
+    "priority": "Must",
+    "acceptance_criteria": [
+      "Normalized schema",
+      "PII catalog and retention policies",
+      "Migration script in db/migrations/0001_initial.sql"
+    ]
+  }
+]
