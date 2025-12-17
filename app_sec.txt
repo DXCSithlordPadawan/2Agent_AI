@@ -25,7 +25,8 @@
 
   <prerequisites>
     <environment_setup>
-      - Internal DNS domain and CA PEM paths
+      - Internal DNS domain IP: 192.168.0.80 and CA PEM IP:192.168.0.92
+      - Domain Name: aip.dxc.com
       - Local registry endpoint and credentials
       - Proxmox access with ability to run helper scripts
       - USB/SSD transfer medium for air-gap bundles; cosign available for signing/verifying
