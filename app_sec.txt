@@ -1,0 +1,100 @@
+<project_specification>
+  <project_name>Argo CD v3.2.1 Air-Gapped Deployment on Proxmox/k3s</project_name>
+  <overview>
+    Deploy and operate Argo CD (pinned v3.2.1) on a k3s cluster running inside Debian 13 (Trixie) LXC containers on Proxmox VE 9.1.
+    Includes air-gap packaging, local registry rewriting, internal PKI trust injection, and security mapping to CIS Kubernetes Benchmark Level 2,
+    DISA STIG (Kubernetes), and FIPS 140-3 guidance. Artifacts include implementation guides, helper scripts, Mermaid diagrams, and version-pinned manifests.
+  </overview>
+
+  <technology_stack>
+    <platforms>
+      <proxmox>Proxmox VE 9.1 (storage=local-lvm, bridge=vmbr0)</proxmox>
+      <containers>LXC (Debian 13 "Trixie")</containers>
+      <kubernetes>k3s (stable channel)</kubernetes>
+      <git>Gitea (latest stable)</git>
+    </platforms>
+    <applications>
+      <cd>Argo CD v3.2.1</cd>
+      <registry>Local registry (registry.internal:5000)</registry>
+    </applications>
+    <security>
+      <pki>Internal CA; trust stores injected</pki>
+      <dns>Internal cluster DNS</dns>
+    </security>
+  </technology_stack>
+
+  <prerequisites>
+    <environment_setup>
+      - Internal DNS domain and CA PEM paths
+      - Local registry endpoint and credentials
+      - Proxmox access with ability to run helper scripts
+      - USB/SSD transfer medium for air-gap bundles; cosign available for signing/verifying
+    </environment_setup>
+  </prerequisites>
+
+  <core_features>
+    <deployment>
+      - Air-gap bundle creation with SBOM, SHA256SUMS, and cosign signatures
+      - K3s registries.yaml configured for local mirror and internal CA
+      - Argo CD install manifests with image registry rewrites
+      - Optional Kustomize overlays for PSA enforcement and audit policy
+    </deployment>
+    <documentation>
+      - PRD, architecture views with Mermaid, security mapping, TOGAF viewpoints
+      - Implementation guide for staging and execution
+      - Test plan and engineering scripts for LXC/K8s/Argo CD readiness
+    </documentation>
+    <helper_scripts>
+      - argocd-k3s-install.sh and gitea-install.sh with systemd unit configuration
+    </helper_scripts>
+    <packaging>
+      - build.sh to produce airgap-bundle and artifacts zip
+    </packaging>
+  </core_features>
+
+  <security_constraints>
+    <baselines>
+      - CIS Kubernetes Benchmark Level 2
+      - DISA STIG (Kubernetes)
+      - FIPS 140-3 guidance
+    </baselines>
+    <controls>
+      - Pod Security Admission policies
+      - RBAC least privilege for Argo CD components
+      - Audit policy configuration
+      - Image provenance and signature verification
+      - Network policies for namespace isolation
+    </controls>
+    <exceptions>
+      - Document compensating controls where full STIG compliance is not feasible
+    </exceptions>
+  </security_constraints>
+
+  <implementation_steps>
+    <step number="0">Intake & Setup</step>
+    <step number="1">PRD</step>
+    <step number="2">Architecture (Mermaid)</step>
+    <step number="3">Security Mapping</step>
+    <step number="5">Implementation Guide</step>
+    <step number="6">Deployment & Control Files</step>
+    <step number="8">Engineering Tests & Test Plan</step>
+    <step number="10">Packaging for Air-Gap</step>
+    <step number="11">Proxmox LXC Installers</step>
+    <step number="12">Versions Recording</step>
+  </implementation_steps>
+
+  <success_criteria>
+    <functionality>
+      - Argo CD v3.2.1 deployed on k3s in LXC
+      - Air-gap packaging and local registry rewriting functioning
+      - Security controls documented and enforced
+    </functionality>
+    <technical_quality>
+      - Version pinning; reproducible builds; verifiable signatures
+      - Clean, maintainable helper scripts
+    </technical_quality>
+    <documentation>
+      - Complete PRD, architecture diagrams, security mapping, test plans, and runbooks
+    </documentation>
+  </success_criteria>
+</project_specification>
