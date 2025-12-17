@@ -3,6 +3,7 @@
 This repository is scaffolded to support a two-agent harness: an **initializer agent** and a **coding/authoring agent**.
 It persists progress via backlog files and atomic, inspectable artifacts.
 
+Uses GITHUB(https://github.com/anthropics/claude-quickstarts/tree/main/autonomous-coding)
 
 ![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)
 
